@@ -5,7 +5,7 @@ const Navbar = ({ onNavigate, activeComponent }) => {
   const navItems = [
     { name: 'À propos', href: 'about', icon: <FaUser />, shortName: 'Profil' },
     { name: 'Parcours', href: 'parcours', icon: <FaGraduationCap />, shortName: 'Études' },
-    { name: 'Compétences', href: 'competences', icon: <FaCogs />, shortName: 'Skills' },
+    { name: 'Compétences', href: 'competences', icon: <FaCogs />, shortName: 'Compétences' },
     { name: 'Projets', href: 'projects', icon: <FaProjectDiagram />, shortName: 'Projets' },
     { name: 'Contact', href: 'contact', icon: <FaEnvelope />, shortName: 'Contact' }
   ];

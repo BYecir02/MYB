@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { 
   FaEnvelope, 
   FaPhone, 
@@ -33,15 +34,30 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulation d'envoi
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Remplacez ces valeurs par vos vraies clés EmailJS
+      await emailjs.send(
+        'service_ykzbw9b',     // 👈 Remplacez par votre Service ID
+        'template_6pjvz86',    // 👈 Remplacez par votre Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'Badirouyecir@gmail.com'
+        },
+        'J9HWPS7NIxAZ6mJRF'      // 👈 Remplacez par votre Public Key
+      );
+      
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Reset status après 3 secondes
+    } catch (error) {
+      console.error('Erreur:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
       setTimeout(() => setSubmitStatus(null), 3000);
-    }, 2000);
+    }
   };
 
   const containerVariants = {
@@ -101,7 +117,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-sm">Email</p>
-                    <p className="text-white font-medium">Badirouyecir@gmail.com</p>
+                    <a 
+                      href="mailto:Badirouyecir@gmail.com"
+                      className="text-white font-medium hover:text-blue-400 transition-colors"
+                    >
+                      Badirouyecir@gmail.com
+                    </a>
                   </div>
                 </div>
 
@@ -111,7 +132,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-sm">Téléphone</p>
-                    <p className="text-white font-medium">07 83 84 27 94</p>
+                    <a 
+                      href="tel:+33783842794"
+                      className="text-white font-medium hover:text-green-400 transition-colors"
+                    >
+                      07 83 84 27 94
+                    </a>
                   </div>
                 </div>
 
@@ -130,18 +156,22 @@ const Contact = () => {
               <div className="mt-8 pt-6 border-t border-white/10">
                 <h3 className="text-white font-semibold mb-4">Suivez-moi</h3>
                 <div className="flex space-x-4">
-                  <a 
-                    href="#" 
+                  <button 
+                    type="button"
+                    onClick={() => window.open('https://www.linkedin.com/in/mohamed-yecir-badirou-4b46a2299/', '_blank')}
                     className="w-10 h-10 bg-blue-600/20 rounded-full flex items-center justify-center hover:bg-blue-600/40 transition-colors"
+                    aria-label="LinkedIn"
                   >
                     <FaLinkedin className="text-blue-400" />
-                  </a>
-                  <a 
-                    href="#" 
+                  </button>
+                  <button 
+                    type="button"
+                    onClick={() => window.open('https://github.com/BYecir02', '_blank')}
                     className="w-10 h-10 bg-gray-600/20 rounded-full flex items-center justify-center hover:bg-gray-600/40 transition-colors"
+                    aria-label="GitHub"
                   >
                     <FaGithub className="text-gray-400" />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -245,7 +275,7 @@ const Contact = () => {
                   )}
                 </motion.button>
 
-                {/* Message de confirmation */}
+                {/* Messages de confirmation/erreur */}
                 {submitStatus === 'success' && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -253,6 +283,16 @@ const Contact = () => {
                     className="p-4 bg-green-600/20 border border-green-500/30 rounded-xl text-green-400 text-center"
                   >
                     ✅ Message envoyé avec succès ! Je vous répondrai bientôt.
+                  </motion.div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-red-600/20 border border-red-500/30 rounded-xl text-red-400 text-center"
+                  >
+                    ❌ Erreur lors de l'envoi. Veuillez réessayer ou me contacter directement.
                   </motion.div>
                 )}
               </form>
