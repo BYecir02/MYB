@@ -5,6 +5,7 @@ import About from './About';
 import Parcours from './Parcours';
 import Skills from './Skills';
 import Projects from './Projects';
+import Contact from './Contact';
 
 const Layout = ({ children }) => {
   const [activeComponent, setActiveComponent] = useState('about');
@@ -20,7 +21,7 @@ const Layout = ({ children }) => {
       case 'projects':
         return <Projects />;
       case 'contact':
-        return <div className="p-8 text-white">Composant Contact à créer</div>;
+        return <Contact />;
       default:
         return <About />;
     }
