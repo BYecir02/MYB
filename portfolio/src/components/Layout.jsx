@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import About from './About';
+import Parcours from './Parcours';
+import Skills from './Skills';
 
 const Layout = ({ children }) => {
   const [activeComponent, setActiveComponent] = useState('about');
@@ -11,9 +13,9 @@ const Layout = ({ children }) => {
       case 'about':
         return <About />;
       case 'parcours':
-        return <div className="p-8 text-white">Composant Parcours à créer</div>;
+        return <Parcours />;
       case 'competences':
-        return <div className="p-8 text-white">Composant Compétences à créer</div>;
+        return <Skills />;
       case 'projects':
         return <div className="p-8 text-white">Composant Projets à créer</div>;
       case 'contact':
