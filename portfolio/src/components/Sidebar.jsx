@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FaUser, FaGraduationCap, FaProjectDiagram, FaEnvelope, FaChevronLeft, FaChevronRight, FaCogs } from 'react-icons/fa';
+import { FaUser, FaGraduationCap, FaProjectDiagram, FaEnvelope, FaChevronLeft, FaChevronRight, FaCogs, FaMoon, FaSun } from 'react-icons/fa';
 
-const Sidebar = ({ onNavigate, activeComponent }) => {
+const Sidebar = ({ onNavigate, activeComponent, isDarkMode, onToggleTheme }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const navItems = [
@@ -83,6 +83,29 @@ const Sidebar = ({ onNavigate, activeComponent }) => {
           ))}
         </ul>
       </nav>
+
+      {/* Theme Toggle */}
+      <div className={`${isCollapsed ? 'p-3' : 'p-6'} border-t border-gray-200`}>
+        <button
+          onClick={onToggleTheme}
+          className={`
+            w-full flex items-center rounded-lg 
+            transition-all duration-200 group
+            ${isCollapsed ? 'justify-center p-3' : 'space-x-3 p-4'}
+            text-gray-700 hover:bg-blue-50 hover:text-blue-600
+          `}
+          title={isCollapsed ? (isDarkMode ? 'Mode clair' : 'Mode sombre') : ''}
+        >
+          <span className={`${isCollapsed ? 'text-xl' : 'text-lg'} transition-transform flex-shrink-0 group-hover:scale-110`}>
+            {isDarkMode ? <FaSun className="text-yellow-500" /> : <FaMoon className="text-blue-600" />}
+          </span>
+          {!isCollapsed && (
+            <span className="font-medium whitespace-nowrap overflow-hidden">
+              {isDarkMode ? 'Mode clair' : 'Mode sombre'}
+            </span>
+          )}
+        </button>
+      </div>
 
       {/* Footer */}
       {!isCollapsed && (
