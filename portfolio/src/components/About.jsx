@@ -35,11 +35,19 @@ const About = () => {
 
           {/* Name & Title */}
           <div className="space-y-4">
+            <motion.p 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-lg text-white/80 font-medium"
+            >
+                👋 Salut ! Je suis
+            </motion.p>
             <motion.h1 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent"
             >
               Mohamed Yecir Badirou
             </motion.h1>
@@ -78,30 +86,6 @@ const About = () => {
           transition={{ delay: 0.7 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-8"
         >
-          
-          {/* Contact Card */}
-          <div className="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <FaUserAlt className="mr-3 text-blue-400" /> Contact
-            </h3>
-            <div className="space-y-4">
-              {[
-                { icon: FaMapMarkerAlt, label: "Localisation", value: "Villeneuve d'Ascq, France" },
-                { icon: FaEnvelope, label: "Email", value: "Badirouyecir@gmail.com" },
-                { icon: FaPhone, label: "Téléphone", value: "07 83 84 27 94" }
-              ].map((item, index) => (
-                <div key={index} className="flex items-center p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors">
-                  <div className="w-12 h-12 rounded-2xl from-blue-500 to-purple-500 flex items-center justify-center mr-4">
-                    <item.icon className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-white/60 text-sm">{item.label}</p>
-                    <p className="text-white font-medium">{item.value}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* About Card */}
           <div className="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
