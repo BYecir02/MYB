@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCode, FaDownload, FaRocket, FaLightbulb, FaMapMarkerAlt, FaEnvelope, FaPhone, FaHeart, FaUserAlt } from 'react-icons/fa';
+import { FaCode, FaDownload, FaRocket, FaLightbulb, FaHeart } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const About = () => {
@@ -35,22 +35,37 @@ const About = () => {
 
           {/* Name & Title */}
           <div className="space-y-4">
-            <motion.p 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-lg text-white/80 font-medium"
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex items-center justify-center gap-2 text-lg text-white/80"
             >
-                👋 Salut ! Je suis
-            </motion.p>
+              <span className="text-2xl">👋</span>
+              <span className="font-medium">Hello, je suis</span>
+            </motion.div>
+            
             <motion.h1 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-2xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent"
+              className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white via-blue-200 to-cyan-300 bg-clip-text text-transparent"
             >
               Mohamed Yecir Badirou
             </motion.h1>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="flex items-center justify-center gap-2 text-white/70"
+            >
+              <span>Développeur</span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+              <span>Créateur</span>
+              <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+              <span>Innovateur</span>
+            </motion.div>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
               <motion.div 
@@ -79,31 +94,34 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Contact & About Grid */}
+        {/* About Section - PLEINE LARGEUR */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="w-full"
         >
-
-          {/* About Card */}
           <div className="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
               <FaHeart className="mr-3 text-red-400" /> À propos
             </h3>
-            <div className="space-y-4 text-white/90 leading-relaxed">
-              <p>
-                Étudiant passionné en informatique à l'<span className="text-blue-400 font-semibold">ISEN Lille</span>, 
-                je maîtrise plusieurs langages de programmation et recherche activement une alternance.
-              </p>
-              <p>
-                <span className="text-blue-400 font-semibold">Rythme :</span> 3 semaines entreprise / 1 semaine école
-              </p>
-              <p>
-                Mon objectif est de contribuer à des projets innovants tout en continuant à apprendre 
-                et évoluer dans le développement web et mobile.
-              </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-white/90 leading-relaxed">
+              <div className="space-y-4">
+                <p>
+                  Étudiant passionné en informatique à l'<span className="text-blue-400 font-semibold">ISEN Lille</span>, 
+                  je maîtrise plusieurs langages de programmation et recherche activement une alternance.
+                </p>
+                <p>
+                  <span className="text-blue-400 font-semibold">Rythme :</span> 3 semaines entreprise / 1 semaine école
+                </p>
+              </div>
+              <div>
+                <p>
+                  Mon objectif est de contribuer à des projets innovants tout en continuant à apprendre 
+                  et évoluer dans le développement web et mobile. Je suis toujours en quête de nouveaux 
+                  défis techniques qui me permettront de grandir professionnellement.
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>
