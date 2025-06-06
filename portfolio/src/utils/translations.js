@@ -22,8 +22,8 @@ export const translations = {
     fullstackDev: "Développeur Fullstack",
     downloadCV: "Télécharger mon CV",
     aboutTitle: "À propos",
-    aboutText1: "Étudiant passionné en informatique à l'ISEN Lille, je maîtrise plusieurs langages de programmation et recherche activement une alternance.",
-    aboutText2: "Mon objectif est de contribuer à des projets innovants tout en continuant à apprendre et évoluer dans le développement web et mobile. Je suis toujours en quête de nouveaux défis techniques qui me permettront de grandir professionnellement.",
+    aboutText1: "Je suis Mohamed Yecir Badirou, développeur fullstack passionné par la technologie, actuellement en cycle ingénieur à l’ISEN Lille. Curieux, dynamique et rigoureux, j’aime transformer les idées en projets concrets à travers le code. Avec des compétences solides en développement web et mobile, je construis des interfaces intuitives et des systèmes robustes. Je suis également à l’aise avec les outils de gestion de projet et les bases de données. En parallèle de mes études, je mène des projets personnels et académiques afin de progresser constamment et de rester en veille technologique.",
+    aboutText2: "Je suis toujours en quête de nouveaux défis techniques qui me permettront de grandir professionnellement. Je suis actuellement à la recherche d’une alternance pour continuer à apprendre dans un cadre professionnel stimulant. Mon objectif est de contribuer à des projets innovants tout en continuant à apprendre et évoluer dans le développement web et mobile .",
     rhythm: "Rythme :",
     rhythmText: "3 semaines entreprise / 1 semaine école",
     
@@ -178,8 +178,8 @@ export const translations = {
     fullstackDev: "Fullstack Developer",
     downloadCV: "Download my CV",
     aboutTitle: "About",
-    aboutText1: "Passionate computer science student at ISEN Lille, I master several programming languages and am actively seeking an apprenticeship.",
-    aboutText2: "My goal is to contribute to innovative projects while continuing to learn and evolve in web and mobile development. I'm always looking for new technical challenges that will help me grow professionally.",
+    aboutText1: "I am Mohamed Yecir Badirou, a fullstack developer passionate about technology, currently pursuing an engineering degree at ISEN Lille. Curious, dynamic and rigorous, I enjoy transforming ideas into concrete projects through code. With solid skills in web and mobile development, I build intuitive interfaces and robust systems. I am also comfortable with project management tools and databases. Alongside my studies, I work on personal and academic projects to constantly progress and stay up-to-date with technology.",
+    aboutText2: "I am always looking for new technical challenges that will allow me to grow professionally. I am currently seeking an apprenticeship to continue learning in a stimulating professional environment. My goal is to contribute to innovative projects while continuing to learn and evolve in web and mobile development.",
     rhythm: "Schedule:",
     rhythmText: "3 weeks company / 1 week school",
     
