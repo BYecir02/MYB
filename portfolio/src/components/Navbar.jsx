@@ -1,13 +1,16 @@
 import React from 'react';
 import { FaUser, FaGraduationCap, FaProjectDiagram, FaEnvelope, FaCogs } from 'react-icons/fa';
+import { useTranslation } from '../utils/translations';
 
-const Navbar = ({ onNavigate, activeComponent }) => {
+const Navbar = ({ onNavigate, activeComponent, language = 'fr' }) => {
+  const t = useTranslation(language);
+
   const navItems = [
-    { name: 'À propos', href: 'about', icon: <FaUser />, shortName: 'Profil' },
-    { name: 'Parcours', href: 'parcours', icon: <FaGraduationCap />, shortName: 'Études' },
-    { name: 'Compétences', href: 'competences', icon: <FaCogs />, shortName: 'Compétences' },
-    { name: 'Projets', href: 'projects', icon: <FaProjectDiagram />, shortName: 'Projets' },
-    { name: 'Contact', href: 'contact', icon: <FaEnvelope />, shortName: 'Contact' }
+    { name: t('about'), href: 'about', icon: <FaUser />, shortName: t('profileShort') },
+    { name: t('journey'), href: 'parcours', icon: <FaGraduationCap />, shortName: t('studiesShort') },
+    { name: t('skills'), href: 'competences', icon: <FaCogs />, shortName: t('skillsShort') },
+    { name: t('projects'), href: 'projects', icon: <FaProjectDiagram />, shortName: t('projectsShort') },
+    { name: t('contact'), href: 'contact', icon: <FaEnvelope />, shortName: t('contactShort') }
   ];
 
   const handleNavClick = (href) => {

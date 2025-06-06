@@ -7,9 +7,12 @@ export const translations = {
     projects: "Mes projets",
     contact: "Contact",
     
-    // Navigation mobile (Navbar)
-    profile: "Profil",
-    studies: "Études",
+    // Navigation mobile (Navbar) - CLÉS MANQUANTES
+    profileShort: "Profil",
+    studiesShort: "Études",
+    skillsShort: "Compétences",
+    projectsShort: "Projets",
+    contactShort: "Contact",
     
     // About Page
     hello: "Hello, je suis",
@@ -67,7 +70,7 @@ export const translations = {
     july2024: "Juillet 2024 - Août 2024",
     laMadeleine: "La Madeleine, France",
     superUDesc: "Réapprovisionnement des rayons, mise en valeur des produits et entretien du magasin.",
-    kesed: " h/f (KESED Services)",
+    kesed: "Employé commercial h/f (KESED Services)",
     oct2021_june2023: "Octobre 2021 - Juin 2023",
     kesedDesc: "Service client, gestion des stocks et inventaires, entretien des locaux.",
     academicInternship: "Stage Académique",
@@ -119,32 +122,31 @@ export const translations = {
     videoPlayer: "Lecteur vidéo",
     gallery: "Galerie",
     
-    // Contact Page
-    contactTitle: "Contact",
+    // Contact Page - CLÉS MANQUANTES
+    contact: "Contact",
     contactSubtitle: "Une question ? Un projet ? N'hésitez pas à me contacter !",
-    myCoordinates: "Mes Coordonnées",
+    myInfo: "Mes Coordonnées",
     email: "Email",
     phone: "Téléphone",
     location: "Localisation",
-    locationText: "Villeneuve d'Ascq, France",
+    currentLocation: "Villeneuve d'Ascq, France",
     followMe: "Suivez-moi",
     sendMessage: "Envoyez un message",
     fullName: "Nom complet",
-    fullNamePlaceholder: "Votre nom complet",
+    namePlaceholder: "Votre nom complet",
     emailAddress: "Adresse email",
     emailPlaceholder: "votre.email@example.com",
     subject: "Sujet",
     subjectPlaceholder: "Objet de votre message",
     message: "Message",
     messagePlaceholder: "Votre message...",
-    sendingMessage: "Envoi en cours...",
+    sending: "Envoi en cours...",
     sendButton: "Envoyer le message",
-    successMessage: "✅ Message envoyé avec succès ! Je vous répondrai bientôt.",
-    errorMessage: "❌ Erreur lors de l'envoi. Veuillez réessayer ou me contacter directement.",
+    successMessage: "Message envoyé avec succès ! Je vous répondrai bientôt.",
+    errorMessage: "Erreur lors de l'envoi. Veuillez réessayer ou me contacter directement.",
     
     // Footer & Sidebar
     fullstackDeveloper: "Développeur Fullstack",
-    portfolio: "Portfolio",
     
     // Theme & Language
     lightMode: "Mode clair",
@@ -161,9 +163,12 @@ export const translations = {
     projects: "My Projects",
     contact: "Contact",
     
-    // Navigation mobile (Navbar)
-    profile: "Profile",
-    studies: "Studies",
+    // Navigation mobile (Navbar) - CLÉS MANQUANTES
+    profileShort: "Profile",
+    studiesShort: "Studies",
+    skillsShort: "Skills",
+    projectsShort: "Projects",
+    contactShort: "Contact",
     
     // About Page
     hello: "Hello! I'm",
@@ -221,7 +226,7 @@ export const translations = {
     july2024: "July 2024 - August 2024",
     laMadeleine: "La Madeleine, France",
     superUDesc: "Restocking shelves, product merchandising and store maintenance.",
-    kesed: " h/f (KESED Services)",
+    kesed: "Sales Associate h/f (KESED Services)",
     oct2021_june2023: "October 2021 - June 2023",
     kesedDesc: "Customer service, inventory management and premises maintenance.",
     academicInternship: "Academic Internship",
@@ -273,32 +278,31 @@ export const translations = {
     videoPlayer: "Video player",
     gallery: "Gallery",
     
-    // Contact Page
-    contactTitle: "Contact",
+    // Contact Page - CLÉS MANQUANTES
+    contact: "Contact",
     contactSubtitle: "A question? A project? Don't hesitate to contact me!",
-    myCoordinates: "My Contact Information",
+    myInfo: "My Contact Information",
     email: "Email",
     phone: "Phone",
     location: "Location",
-    locationText: "Villeneuve d'Ascq, France",
+    currentLocation: "Villeneuve d'Ascq, France",
     followMe: "Follow me",
     sendMessage: "Send a message",
     fullName: "Full name",
-    fullNamePlaceholder: "Your full name",
+    namePlaceholder: "Your full name",
     emailAddress: "Email address",
     emailPlaceholder: "your.email@example.com",
     subject: "Subject",
     subjectPlaceholder: "Subject of your message",
     message: "Message",
     messagePlaceholder: "Your message...",
-    sendingMessage: "Sending...",
+    sending: "Sending...",
     sendButton: "Send message",
-    successMessage: "✅ Message sent successfully! I will reply to you soon.",
-    errorMessage: "❌ Error sending message. Please try again or contact me directly.",
+    successMessage: "Message sent successfully! I will reply to you soon.",
+    errorMessage: "Error sending message. Please try again or contact me directly.",
     
     // Footer & Sidebar
     fullstackDeveloper: "Fullstack Developer",
-    portfolio: "Portfolio",
     
     // Theme & Language
     lightMode: "Light Mode",
