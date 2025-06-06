@@ -112,12 +112,12 @@ const About = ({ language = 'fr' }) => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-white/90 leading-relaxed">
               <div className="space-y-4">
                 <p>{t('aboutText1')}</p>
-                <p>
-                  <span className="text-blue-400 font-semibold">{t('rhythm')}</span> {t('rhythmText')}
-                </p>
               </div>
               <div>
                 <p>{t('aboutText2')}</p>
+                <p>
+                  <span className="text-blue-400 font-semibold">{t('rhythm')}</span> {t('rhythmText')}
+                </p>
               </div>
             </div>
           </div>
