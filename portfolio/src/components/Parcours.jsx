@@ -1,35 +1,38 @@
 import React from 'react';
 import { FaGraduationCap, FaBriefcase, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useTranslation } from '../utils/translations';
 
-const Parcours = () => {
+const Parcours = ({ language = 'fr' }) => {
+  const t = useTranslation(language);
+
   // Données pour le parcours académique
   const educationData = [
     {
       id: 1,
-      title: "Cycle Ingénieur",
-      institution: "Institut Supérieur de l'Electronique et du Numérique (ISEN)",
-      period: "Depuis 2023",
-      location: "Lille, France",
-      description: "Formation d'ingénieur en informatique avec spécialisation en développement logiciel et systèmes embarqués.",
+      title: t('cycleEngineer'),
+      institution: t('isen'),
+      period: t('since2023'),
+      location: t('lille'),
+      description: t('isenDesc'),
       icon: <FaGraduationCap className="text-white" />
     },
     {
       id: 2,
-      title: "Cycle Préparatoire",
-      institution: "Cour Préparatoire Sainte Marie - Stella (CPMS)",
-      period: "2021 - 2023",
-      location: "Cotonou, Bénin",
-      description: "Formation intensive en mathématiques, physique et sciences de l'ingénieur préparant aux grandes écoles d'ingénieurs.",
+      title: t('preparatoryCycle'),
+      institution: t('cpms'),
+      period: t('period2021_2023'),
+      location: t('cotonou'),
+      description: t('cpmsDesc'),
       icon: <FaGraduationCap className="text-white" />
     },
     {
       id: 3,
-      title: "Baccalauréat Scientifique D",
-      institution: "Complexe scolaire Le Rocher",
-      period: "2021",
-      location: "Cotonou, Bénin",
-      description: "Diplôme de fin d'études secondaires.",
+      title: t('baccalaureate'),
+      institution: t('leRocher'),
+      period: t('year2021'),
+      location: t('cotonou'),
+      description: t('baccDesc'),
       icon: <FaGraduationCap className="text-white" />
     }
   ];
@@ -38,29 +41,29 @@ const Parcours = () => {
   const experienceData = [
     {
       id: 1,
-      title: "Employé commercial",
-      company: "ELDPH (Super U)",
-      period: "Juillet 2024 - Août 2024",
-      location: "La Madeleine, France",
-      description: "Réapprovisionnement des rayons, mise en valeur des produits et entretien du magasin.",
+      title: t('commercialEmployee'),
+      company: t('superU'),
+      period: t('july2024'),
+      location: t('laMadeleine'),
+      description: t('superUDesc'),
       icon: <FaBriefcase className="text-white" />
     },
     {
       id: 2,
-      title: "Employé commercial",
-      company: " h/f (KESED Services)",
-      period: "Octobre 2021 - Juin 2023",
-      location: "Cotonou, Bénin",
-      description: "Service client, gestion des stocks et inventaires, entretien des locaux.",
+      title: t('commercialEmployee'),
+      company: t('kesed'),
+      period: t('oct2021_june2023'),
+      location: t('cotonou'),
+      description: t('kesedDesc'),
       icon: <FaBriefcase className="text-white" />
     },
     {
       id: 3,
-      title: "Stage Académique",
-      company: "Safar Travels & Tours",
-      period: "Juillet 2022 - Août 2022",
-      location: "Cotonou, Bénin",
-      description: "Réservations et ventes de billets, relations clients et entretiens.",
+      title: t('academicInternship'),
+      company: t('safarTravels'),
+      period: t('july2022'),
+      location: t('cotonou'),
+      description: t('safarDesc'),
       icon: <FaBriefcase className="text-white" />
     }
   ];
@@ -97,7 +100,7 @@ const Parcours = () => {
           className="text-center space-y-4"
         >
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-left">
-            Mon Parcours
+            {t('myJourney')}
           </h1>
         </motion.div>
 
@@ -115,7 +118,7 @@ const Parcours = () => {
               <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-3 rounded-xl">
                 <FaGraduationCap className="text-white text-xl" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">Formation</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">{t('education')}</h2>
             </div>
             
             <div className="space-y-6">
@@ -161,7 +164,7 @@ const Parcours = () => {
               <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-3 rounded-xl">
                 <FaBriefcase className="text-white text-xl" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">Expérience</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">{t('experience')}</h2>
             </div>
             
             <div className="space-y-6">

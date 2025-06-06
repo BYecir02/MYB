@@ -11,8 +11,9 @@ import {
   FaUser,
   FaComment
 } from 'react-icons/fa';
+import { useTranslation } from '../utils/translations';
 
-const Contact = () => {
+const Contact = ({ language = 'fr' }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,6 +22,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const t = useTranslation(language);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -91,10 +93,10 @@ const Contact = () => {
           className="text-center space-y-4"
         >
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Contact
+            {t('contact')}
           </h1>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Une question ? Un projet ? N'hésitez pas à me contacter !
+            {t('contactSubtitle')}
           </p>
         </motion.div>
 
@@ -108,7 +110,7 @@ const Contact = () => {
           {/* Informations de contact */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div className="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-white/10">
-              <h2 className="text-2xl font-bold text-white mb-6">Mes Coordonnées</h2>
+              <h2 className="text-2xl font-bold text-white mb-6">{t('myInfo')}</h2>
               
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
@@ -116,7 +118,7 @@ const Contact = () => {
                     <FaEnvelope className="text-blue-400 text-xl" />
                   </div>
                   <div>
-                    <p className="text-white/60 text-sm">Email</p>
+                    <p className="text-white/60 text-sm">{t('email')}</p>
                     <a 
                       href="mailto:Badirouyecir@gmail.com"
                       className="text-white font-medium hover:text-blue-400 transition-colors"
@@ -131,7 +133,7 @@ const Contact = () => {
                     <FaPhone className="text-green-400 text-xl" />
                   </div>
                   <div>
-                    <p className="text-white/60 text-sm">Téléphone</p>
+                    <p className="text-white/60 text-sm">{t('phone')}</p>
                     <a 
                       href="tel:+33783842794"
                       className="text-white font-medium hover:text-green-400 transition-colors"
@@ -146,15 +148,15 @@ const Contact = () => {
                     <FaMapMarkerAlt className="text-purple-400 text-xl" />
                   </div>
                   <div>
-                    <p className="text-white/60 text-sm">Localisation</p>
-                    <p className="text-white font-medium">Villeneuve d'Ascq, France</p>
+                    <p className="text-white/60 text-sm">{t('location')}</p>
+                    <p className="text-white font-medium">{t('currentLocation')}</p>
                   </div>
                 </div>
               </div>
 
               {/* Réseaux sociaux */}
               <div className="mt-8 pt-6 border-t border-white/10">
-                <h3 className="text-white font-semibold mb-4">Suivez-moi</h3>
+                <h3 className="text-white font-semibold mb-4">{t('followMe')}</h3>
                 <div className="flex space-x-4">
                   <button 
                     type="button"
@@ -180,14 +182,14 @@ const Contact = () => {
           {/* Formulaire de contact */}
           <motion.div variants={itemVariants}>
             <div className="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-white/10">
-              <h2 className="text-2xl font-bold text-white mb-6">Envoyez un message</h2>
+              <h2 className="text-2xl font-bold text-white mb-6">{t('sendMessage')}</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Nom */}
                 <div>
                   <label className="block text-white/80 text-sm font-medium mb-2">
                     <FaUser className="inline mr-2" />
-                    Nom complet
+                    {t('fullName')}
                   </label>
                   <input
                     type="text"
@@ -196,7 +198,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-blue-500 focus:bg-white/20 transition-all duration-300"
-                    placeholder="Votre nom complet"
+                    placeholder={t('namePlaceholder')}
                   />
                 </div>
 
@@ -204,7 +206,7 @@ const Contact = () => {
                 <div>
                   <label className="block text-white/80 text-sm font-medium mb-2">
                     <FaEnvelope className="inline mr-2" />
-                    Adresse email
+                    {t('emailAddress')}
                   </label>
                   <input
                     type="email"
@@ -213,14 +215,14 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-blue-500 focus:bg-white/20 transition-all duration-300"
-                    placeholder="votre.email@example.com"
+                    placeholder={t('emailPlaceholder')}
                   />
                 </div>
 
                 {/* Sujet */}
                 <div>
                   <label className="block text-white/80 text-sm font-medium mb-2">
-                    Sujet
+                    {t('subject')}
                   </label>
                   <input
                     type="text"
@@ -229,7 +231,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-blue-500 focus:bg-white/20 transition-all duration-300"
-                    placeholder="Objet de votre message"
+                    placeholder={t('subjectPlaceholder')}
                   />
                 </div>
 
@@ -237,7 +239,7 @@ const Contact = () => {
                 <div>
                   <label className="block text-white/80 text-sm font-medium mb-2">
                     <FaComment className="inline mr-2" />
-                    Message
+                    {t('message')}
                   </label>
                   <textarea
                     name="message"
@@ -246,7 +248,7 @@ const Contact = () => {
                     required
                     rows="5"
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-blue-500 focus:bg-white/20 transition-all duration-300 resize-none"
-                    placeholder="Votre message..."
+                    placeholder={t('messagePlaceholder')}
                   />
                 </div>
 
@@ -265,12 +267,12 @@ const Contact = () => {
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      <span>Envoi en cours...</span>
+                      <span>{t('sending')}</span>
                     </>
                   ) : (
                     <>
                       <FaPaperPlane />
-                      <span>Envoyer le message</span>
+                      <span>{t('sendButton')}</span>
                     </>
                   )}
                 </motion.button>
@@ -282,7 +284,7 @@ const Contact = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="p-4 bg-green-600/20 border border-green-500/30 rounded-xl text-green-400 text-center"
                   >
-                    ✅ Message envoyé avec succès ! Je vous répondrai bientôt.
+                    ✅ {t('successMessage')}
                   </motion.div>
                 )}
 
@@ -292,7 +294,7 @@ const Contact = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="p-4 bg-red-600/20 border border-red-500/30 rounded-xl text-red-400 text-center"
                   >
-                    ❌ Erreur lors de l'envoi. Veuillez réessayer ou me contacter directement.
+                    ❌ {t('errorMessage')}
                   </motion.div>
                 )}
               </form>

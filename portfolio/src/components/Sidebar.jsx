@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { FaUser, FaGraduationCap, FaProjectDiagram, FaEnvelope, FaChevronLeft, FaChevronRight, FaCogs, FaMoon, FaSun } from 'react-icons/fa';
+import { useTranslation } from '../utils/translations';
 
-const Sidebar = ({ onNavigate, activeComponent, isDarkMode, onToggleTheme }) => {
+const Sidebar = ({ onNavigate, activeComponent, isDarkMode, onToggleTheme, language }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const t = useTranslation(language);
 
   const navItems = [
-    { name: 'À propos', href: 'about', icon: <FaUser /> },
-    { name: 'Mon parcours', href: 'parcours', icon: <FaGraduationCap /> },
-    { name: 'Compétences', href: 'competences', icon: <FaCogs /> },
-    { name: 'Mes projets', href: 'projects', icon: <FaProjectDiagram /> },
-    { name: 'Contact', href: 'contact', icon: <FaEnvelope /> }
+    { name: t('about'), href: 'about', icon: <FaUser /> },
+    { name: t('journey'), href: 'parcours', icon: <FaGraduationCap /> },
+    { name: t('skills'), href: 'competences', icon: <FaCogs /> },
+    { name: t('projects'), href: 'projects', icon: <FaProjectDiagram /> },
+    { name: t('contact'), href: 'contact', icon: <FaEnvelope /> }
   ];
 
   const handleNavClick = (href) => {
@@ -40,7 +42,7 @@ const Sidebar = ({ onNavigate, activeComponent, isDarkMode, onToggleTheme }) => 
           {!isCollapsed ? (
             <div className="overflow-hidden">
               <h2 className="font-bold text-gray-800 text-xl whitespace-nowrap">MYB</h2>
-              <p className="text-sm text-gray-600 whitespace-nowrap">Portfolio</p>
+              <p className="text-sm text-gray-600 whitespace-nowrap">{t('portfolio')}</p>
             </div>
           ) : (
             <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mx-auto">
@@ -94,14 +96,14 @@ const Sidebar = ({ onNavigate, activeComponent, isDarkMode, onToggleTheme }) => 
             ${isCollapsed ? 'justify-center p-3' : 'space-x-3 p-4'}
             text-gray-700 hover:bg-blue-50 hover:text-blue-600
           `}
-          title={isCollapsed ? (isDarkMode ? 'Mode clair' : 'Mode sombre') : ''}
+          title={isCollapsed ? (isDarkMode ? t('lightMode') : t('darkMode')) : ''}
         >
           <span className={`${isCollapsed ? 'text-xl' : 'text-lg'} transition-transform flex-shrink-0 group-hover:scale-110`}>
             {isDarkMode ? <FaSun className="text-yellow-500" /> : <FaMoon className="text-blue-600" />}
           </span>
           {!isCollapsed && (
             <span className="font-medium whitespace-nowrap overflow-hidden">
-              {isDarkMode ? 'Mode clair' : 'Mode sombre'}
+              {isDarkMode ? t('lightMode') : t('darkMode')}
             </span>
           )}
         </button>
@@ -112,7 +114,7 @@ const Sidebar = ({ onNavigate, activeComponent, isDarkMode, onToggleTheme }) => 
         <div className="p-6 border-t border-gray-200">
           <div className="text-center">
             <p className="text-xs text-gray-500">© 2025 Mohamed Yecir</p>
-            <p className="text-xs text-gray-400">Développeur Fullstack</p>
+            <p className="text-xs text-gray-400">{t('fullstackDeveloper')}</p>
           </div>
         </div>
       )}

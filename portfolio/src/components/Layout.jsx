@@ -10,22 +10,25 @@ import { FaMoon, FaSun } from 'react-icons/fa';
 
 const Layout = ({ children }) => {
   const [activeComponent, setActiveComponent] = useState('about');
-  const [isDarkMode, setIsDarkMode] = useState(true); // État du thème
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [language, setLanguage] = useState('fr'); // 'fr' ou 'en'
 
   const renderComponent = () => {
+    const componentProps = { language }; // Passer la langue à tous les composants
+    
     switch(activeComponent) {
       case 'about':
-        return <About />;
+        return <About {...componentProps} />;
       case 'parcours':
-        return <Parcours />;
+        return <Parcours {...componentProps} />;
       case 'competences':
-        return <Skills />;
+        return <Skills {...componentProps} />;
       case 'projects':
-        return <Projects />;
+        return <Projects {...componentProps} />;
       case 'contact':
-        return <Contact />;
+        return <Contact {...componentProps} />;
       default:
-        return <About />;
+        return <About {...componentProps} />;
     }
   };
 
@@ -38,7 +41,16 @@ const Layout = ({ children }) => {
       }`}>
         <div className="h-[calc(100vh-1rem)] sm:h-[calc(100vh-2rem)] lg:h-[90vh] w-full max-w-7xl mx-auto bg-blue-500/60 backdrop-blur-sm rounded-lg flex overflow-hidden shadow-2xl mb-16 lg:mb-0 relative">
           
-          {/* Theme Toggle Button pour mobile - En haut à droite */}
+          {/* Language Toggle - Desktop à droite, Mobile à gauche */}
+          <button
+            onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
+            className="absolute top-4 left-4 lg:left-auto lg:right-4 z-50 bg-white/20 backdrop-blur-sm text-white px-3 py-2 rounded-lg shadow-lg hover:bg-white/30 transition-all duration-200 border border-white/20 font-bold text-sm"
+            title={language === 'fr' ? 'Switch to English' : 'Passer en Français'}
+          >
+            {language.toUpperCase()}
+          </button>
+
+          {/* Theme Toggle Button - Mobile seulement à droite */}
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
             className="lg:hidden absolute top-4 right-4 z-50 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full shadow-lg hover:bg-white/30 transition-all duration-200 border border-white/20"
@@ -54,6 +66,8 @@ const Layout = ({ children }) => {
             activeComponent={activeComponent}
             isDarkMode={isDarkMode}
             onToggleTheme={() => setIsDarkMode(!isDarkMode)}
+            language={language}
+            onToggleLanguage={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
           />
           <main className="flex-1 h-full overflow-hidden">
             {renderComponent()}
@@ -63,7 +77,11 @@ const Layout = ({ children }) => {
       </div>
       
       {/* Bottom Navigation pour mobile */}
-      <Navbar onNavigate={setActiveComponent} activeComponent={activeComponent} />
+      <Navbar 
+        onNavigate={setActiveComponent} 
+        activeComponent={activeComponent}
+        language={language}
+      />
     </>
   );
 };

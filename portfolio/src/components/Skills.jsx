@@ -15,11 +15,14 @@ import {
   FaTrello
 } from 'react-icons/fa';
 import { SiTailwindcss, SiDjango, SiVuedotjs, SiFigma, SiCanva, SiNotion } from 'react-icons/si';
+import { useTranslation } from '../utils/translations';
 
-const Skills = () => {
+const Skills = ({ language = 'fr' }) => {
+  const t = useTranslation(language);
+
   const skillCategories = [
     {
-      title: "Frontend",
+      title: t('frontend'),
       color: "from-blue-500 to-cyan-500",
       skills: [
         { name: "HTML5", level: 80, icon: <FaHtml5 className="text-orange-400" /> },
@@ -31,33 +34,33 @@ const Skills = () => {
       ]
     },
     {
-      title: "Backend",
+      title: t('backend'),
       color: "from-purple-500 to-indigo-500",
       skills: [
-        { name: "Bases de données", level: 75, icon: <FaDatabase className="text-gray-400" /> },
+        { name: t('databases'), level: 75, icon: <FaDatabase className="text-gray-400" /> },
         { name: "Python", level: 60, icon: <FaPython className="text-blue-400" /> },
         { name: "Node.js", level: 55, icon: <FaNodeJs className="text-green-500" /> },
         { name: "Django", level: 50, icon: <SiDjango className="text-green-600" /> }
       ]
     },
     {
-      title: "Design & Outils",
+      title: t('designTools'),
       color: "from-green-500 to-teal-500",
       skills: [
         { name: "Figma", level: 70, icon: <SiFigma className="text-purple-400" /> },
         { name: "Canva", level: 75, icon: <SiCanva className="text-blue-400" /> },
         { name: "Git & GitHub", level: 65, icon: <FaGitAlt className="text-orange-500" /> },
-        { name: "UI/UX Design", level: 60, icon: <FaPalette className="text-pink-400" /> }
+        { name: t('uiuxDesign'), level: 60, icon: <FaPalette className="text-pink-400" /> }
       ]
     },
     {
-      title: "Gestion de Projet",
+      title: t('projectManagement'),
       color: "from-orange-500 to-red-500",
       skills: [
         { name: "Trello", level: 80, icon: <FaTrello className="text-blue-500" /> },
         { name: "Notion", level: 75, icon: <SiNotion className="text-gray-300" /> },
-        { name: "Planification", level: 70, icon: <FaTasks className="text-orange-400" /> },
-        { name: "Travail d'équipe", level: 75, icon: <FaUsers className="text-blue-400" /> }
+        { name: t('planning'), level: 70, icon: <FaTasks className="text-orange-400" /> },
+        { name: t('teamwork'), level: 75, icon: <FaUsers className="text-blue-400" /> }
       ]
     }
   ];
@@ -101,7 +104,7 @@ const Skills = () => {
           className="text-center space-y-4"
         >
           <h1 className="text-left text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Mes Compétences
+            {t('mySkills')}
           </h1>
         </motion.div>
 
@@ -174,11 +177,10 @@ const Skills = () => {
         >
           <div className="text-center space-y-4">
             <h3 className="text-xl sm:text-2xl font-bold text-white">
-              En cours d'apprentissage
+              {t('continuousLearningSection')}
             </h3>
             <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
-              Je continue d'élargir mes compétences techniques et managériales pour devenir 
-              un développeur fullstack capable de mener des projets de A à Z.
+              {t('learningText')}
             </p>
             
             <div className="flex flex-wrap justify-center gap-3 mt-6">

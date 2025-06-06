@@ -9,9 +9,11 @@ import {
   FaCss3Alt,
 } from 'react-icons/fa';
 import { SiTailwindcss, SiDjango, SiVuedotjs, SiFigma, SiMongodb, SiTypescript } from 'react-icons/si';
+import { useTranslation } from '../utils/translations';
 
-const Projects = () => {
+const Projects = ({ language = 'fr' }) => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const t = useTranslation(language);
 
   const techIcons = {
     'React': <FaReact className="text-cyan-400" />,
@@ -31,43 +33,54 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "StudiaLink - Plateforme collaborative étudiante",
-      description: "Application full-stack permettant l'organisation de sessions d'étude avec messagerie temps réel, partage de fichiers et interface responsive.",
-      longDescription: "Application full-stack permettant l'organisation de sessions d'étude avec messagerie temps réel, partage de fichiers et interface responsive. Architecture REST API complète avec authentification JWT et gestion de fichiers multimédia. Développée en 6 semaines avec une équipe de développeurs.",
+      title: t('studiaLink'),
+      description: t('studiaDesc'),
+      longDescription: t('studiaLongDesc'),
       image: "/Studialink.png",
       technologies: ["React", "Node.js", "MySQL", "JWT"],
       githubUrl: "https://github.com/username/studialink",
       liveUrl: null,
       features: [
-        "Organisation de sessions d'étude",
-        "Messagerie temps réel",
-        "Partage de fichiers multimédia",
-        "Interface responsive",
-        "Authentification JWT",
-        "Architecture REST API complète"
+        t('studySessions'),
+        t('realTimeMessaging'),
+        t('fileSharing'),
+        t('responsiveInterface'),
+        t('jwtAuth'),
+        t('restApi')
       ]
     },
     {
       id: 2,
-      title: "Portfolio Interactif",
-      description: "Portfolio personnel avec animations avancées et design responsive",
-      longDescription: "Portfolio moderne avec des animations fluides, design responsive et interface utilisateur intuitive. Développé avec React et Framer Motion pour des transitions élégantes.",
+      title: t('portfolio'),
+      description: t('portfolioDesc'),
+      longDescription: t('portfolioLongDesc'),
       image: "/api/placeholder/400/250",
       technologies: ["React", "Tailwind CSS", "JavaScript"],
       githubUrl: "https://github.com/username/portfolio",
       liveUrl: "https://portfolio-demo.com",
-      features: ["Animations fluides", "Design responsive", "Mode sombre", "Optimisé SEO"]
+      features: [
+        t('fluidAnimations'),
+        t('responsiveDesign'),
+        t('darkMode'),
+        t('seoOptimized')
+      ]
     },
     {
       id: 3,
-      title: "Simulateur d'environnement Windows",
-      description: "Application web interactive reproduisant l'expérience d'un bureau Windows moderne avec un écosystème d'applications fonctionnelles.",
-      longDescription: "Simulateur d'environnement Windows moderne avec un écosystème d'applications fonctionnelles. Développé avec React et Framer Motion pour des transitions élégantes.",
+      title: t('windowsSimulator'),
+      description: t('windowsDesc'),
+      longDescription: t('windowsLongDesc'),
       image: "/virtual_desk.png",
       technologies: ["React", "Framer Motion"],
       githubUrl: "https://github.com/username/task-api",
       liveUrl: null,
-      features: ["Bloc-notes", "Calculatrice", "Explorateur", "Lecteur vidéo", "Galerie"]
+      features: [
+        t('notepad'),
+        t('calculator'),
+        t('explorer'),
+        t('videoPlayer'),
+        t('gallery')
+      ]
     }
   ];
 
@@ -97,7 +110,7 @@ const Projects = () => {
       <div class="w-full h-48 bg-gradient-to-r from-blue-700 to-indigo-800 flex items-center justify-center">
         <div class="text-white text-center p-4">
           <span class="text-4xl mb-2">📷</span>
-          <p class="text-sm">Image non disponible</p>
+          <p class="text-sm">${t('imageNotAvailable')}</p>
         </div>
       </div>
     `;
@@ -115,7 +128,7 @@ const Projects = () => {
           className="space-y-4"
         >
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Mes Projets
+            {t('myProjects')}
           </h1>
         </motion.div>
 
@@ -224,7 +237,7 @@ const Projects = () => {
                           placeholder.className = "w-full h-48 bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl flex flex-col items-center justify-center text-white p-4";
                           placeholder.innerHTML = `
                             <span class="text-3xl mb-2">📷</span>
-                            <p class="text-sm">Image non disponible</p>
+                            <p class="text-sm">${t('imageNotAvailable')}</p>
                           `;
                           e.target.replaceWith(placeholder);
                         }}
@@ -233,7 +246,7 @@ const Projects = () => {
 
                     {/* Description compacte */}
                     <div>
-                      <h3 className="text-base font-semibold text-white mb-2">Description</h3>
+                      <h3 className="text-base font-semibold text-white mb-2">{t('description')}</h3>
                       <p className="text-white/80 text-sm leading-relaxed">
                         {selectedProject.longDescription}
                       </p>
@@ -241,7 +254,7 @@ const Projects = () => {
 
                     {/* Technologies compactes */}
                     <div>
-                      <h3 className="text-base font-semibold text-white mb-2">Technologies</h3>
+                      <h3 className="text-base font-semibold text-white mb-2">{t('technologies')}</h3>
                       <div className="flex flex-wrap gap-2">
                         {selectedProject.technologies.map((tech, index) => (
                           <div 
@@ -257,7 +270,7 @@ const Projects = () => {
 
                     {/* Fonctionnalités en liste compacte */}
                     <div>
-                      <h3 className="text-base font-semibold text-white mb-2">Fonctionnalités</h3>
+                      <h3 className="text-base font-semibold text-white mb-2">{t('features')}</h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
                         {selectedProject.features.map((feature, index) => (
                           <div key={index} className="flex items-center space-x-2 text-white/80 text-sm">
