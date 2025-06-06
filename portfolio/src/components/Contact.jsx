@@ -90,12 +90,12 @@ const Contact = ({ language = 'fr' }) => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-left space-y-4"
+          className="text-center space-y-4"
         >
-          <h1 className="text-left text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h1 className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             {t('contact')}
           </h1>
-          <p className="text-left text-white/70 text-lg max-w-2xl mx-auto">
+          <p className="text-center text-white/70 text-lg max-w-2xl mx-auto">
             {t('contactSubtitle')}
           </p>
         </motion.div>

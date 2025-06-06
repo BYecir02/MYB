@@ -99,7 +99,7 @@ const Parcours = ({ language = 'fr' }) => {
           transition={{ duration: 0.5 }}
           className="text-center space-y-4"
         >
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-left">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center">
             {t('myJourney')}
           </h1>
         </motion.div>
