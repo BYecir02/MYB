@@ -127,7 +127,7 @@ const Projects = ({ language = 'fr' }) => {
           transition={{ duration: 0.5 }}
           className="space-y-4"
         >
-          <h1 className=" text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h1 className=" text-center text-2xl sm:text-4xl lg:text-5xl font-bold text-white">
             {t('myProjects')}
           </h1>
         </motion.div>
