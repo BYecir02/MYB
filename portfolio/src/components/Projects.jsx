@@ -117,7 +117,7 @@ const Projects = ({ language = 'fr' }) => {
   };
 
   return (
-    <div className="h-full overflow-y-auto hide-scrollbar p-4 sm:p-6 lg:p-8 text-white pb-20 lg:pb-8">
+    <div className="h-full overflow-y-auto hide-scrollbar p-4 sm:p-6 lg:p-8 text-white pb-20 lg:pb-8 relative">
       <div className="max-w-6xl mx-auto space-y-8 sm:space-y-12">
         
         {/* En-tête */}
@@ -185,30 +185,21 @@ const Projects = ({ language = 'fr' }) => {
           ))}
         </motion.div>
 
-        {/* Modal de détail du projet - ARRIÈRE-PLAN PLEIN ÉCRAN */}
+        {/* Modal de détail du projet - CENTRÉ DANS LE LAYOUT */}
         <AnimatePresence>
           {selectedProject && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed top-0 left-0 right-0 bottom-0 w-screen h-screen bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
-              style={{ 
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100vw',
-                height: '100vh',
-                margin: 0,
-                padding: '1rem'
-              }}
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
               onClick={() => setSelectedProject(null)}
             >
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
-                className="bg-gradient-to-r from-blue-900/90 to-indigo-900/90 backdrop-blur-sm rounded-2xl max-w-2xl w-full max-h-[75vh] overflow-y-auto border border-white/20 relative"
+                className="bg-gradient-to-r from-blue-900/95 to-indigo-900/95 backdrop-blur-sm rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto border border-white/20 relative shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="p-4 sm:p-6">
@@ -218,7 +209,7 @@ const Projects = ({ language = 'fr' }) => {
                     </h2>
                     <button
                       onClick={() => setSelectedProject(null)}
-                      className="text-white/70 hover:text-white text-xl w-6 h-6 flex items-center justify-center transition-colors duration-200"
+                      className="text-white/70 hover:text-white text-2xl w-8 h-8 flex items-center justify-center transition-colors duration-200 hover:bg-white/10 rounded-full"
                     >
                       ×
                     </button>

@@ -2,7 +2,7 @@ import React from 'react';
 import { FaCode, FaDownload, FaRocket, FaLightbulb, FaHeart } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useTranslation } from '../utils/translations';
-
+import profileImage from '../assets/yemoji.jpg';
 const About = ({ language = 'fr' }) => {
   const t = useTranslation(language);
 
@@ -28,8 +28,12 @@ const About = ({ language = 'fr' }) => {
           {/* Avatar */}
           <div className="relative mx-auto w-40 h-40">
             <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-2 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-gradient-to-tr from-cyan-400 to-blue-500 flex items-center justify-center">
-                <span className="text-5xl">💻</span>
+              <div className="w-full h-full rounded-full bg-gradient-to-tr from-cyan-400 to-blue-500 flex items-center justify-center overflow-hidden">
+                <img 
+                  src={profileImage} 
+                  alt="Mohamed Yecir Badirou" 
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
             </div>
             <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
