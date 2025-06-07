@@ -9,4 +9,4 @@ Disallow: /*.js$
 Disallow: /*.css$
 
 # Sitemap
-Sitemap: https://myb-seven.vercel.app/
+Sitemap: https://myb-seven.vercel.app/sitemap.xml
