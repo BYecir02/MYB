@@ -2,12 +2,11 @@ import React from 'react';
 import { FaCode, FaDownload, FaRocket, FaLightbulb, FaHeart } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useTranslation } from '../utils/translations';
-import profileImage from '../assets/yemoji.jpg';
 const About = ({ language = 'fr' }) => {
   const t = useTranslation(language);
 
   const handleDownloadCV = () => {
-    // Lien vers votre CV (à placer dans le dossier public)
+    // Lien vers le CV (dans le dossier public)
     const link = document.createElement('a');
     link.href = '/cv/CV_BADIROU_Mohamed_Yecir_Alternance.pdf';
     link.download = 'CV_BADIROU_Mohamed_Yecir_Alternance.pdf';
@@ -25,21 +24,7 @@ const About = ({ language = 'fr' }) => {
           transition={{ duration: 0.8 }}
           className="text-center space-y-6"
         >
-          {/* Avatar */}
-          <div className="relative mx-auto w-40 h-40">
-            <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-2 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-gradient-to-tr from-cyan-400 to-blue-500 flex items-center justify-center overflow-hidden">
-                <img 
-                  src={profileImage} 
-                  alt="Mohamed Yecir Badirou" 
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
-            </div>
-            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
-              <div className="w-3 h-3 bg-white rounded-full"></div>
-            </div>
-          </div>
+
 
           {/* Name & Title */}
           <div className="space-y-4">
