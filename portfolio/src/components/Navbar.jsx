@@ -27,7 +27,7 @@ const Navbar = ({ onNavigate, activeComponent, language = 'fr' }) => {
             className={`flex flex-col items-center justify-center p-1.5 rounded-xl transition-all duration-200 min-w-0 flex-1 ${
               activeComponent === item.href
                 ? 'text-blue-600 bg-white/40 backdrop-blur-sm'
-                : 'text-gray-700 hover:text-blue-600 hover:bg-white/20'
+                : 'text-white-700 hover:text-blue-600 hover:bg-white/20'
             }`}
           >
             <span className={`text-base mb-1 transition-transform ${
