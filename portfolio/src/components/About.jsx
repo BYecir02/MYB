@@ -26,7 +26,7 @@ const About = ({ language = 'fr' }) => {
           className="text-center space-y-6"
         >
           {/* Name & Title */}
-          <div className="space-y-4 m-28">
+          <div className="space-y-4 m-14">
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
