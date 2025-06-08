@@ -36,10 +36,10 @@ const Layout = ({ children }) => {
     <>
       <div className={`min-h-screen p-2 sm:p-4 lg:p-10 transition-all duration-300 ${
         isDarkMode 
-          ? 'bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900' 
-          : 'bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100'
+          ? 'bg-gradient-to-br from-black via-gray-900 to-slate-900' 
+          : 'bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900'
       }`}>
-        <div className="h-[calc(100vh-1rem)] sm:h-[calc(100vh-2rem)] lg:h-[90vh] w-full max-w-7xl mx-auto bg-blue-500/60 backdrop-blur-sm rounded-lg flex overflow-hidden shadow-2xl mb-16 lg:mb-0 relative">
+        <div className="h-[calc(100vh-1rem)] sm:h-[calc(100vh-2rem)] lg:h-[90vh] w-full max-w-7xl mx-auto bg-white-500/60 backdrop-blur-sm rounded-lg flex overflow-hidden shadow-2xl mb-16 lg:mb-0 relative">
           
           {/* Language Toggle - Desktop à droite, Mobile à gauche */}
           <button
