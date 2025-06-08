@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   FaReact, 
   FaNodeJs, 
@@ -7,12 +7,13 @@ import {
   FaJs, 
   FaHtml5, 
   FaCss3Alt,
+  FaGithub,
+  FaExternalLinkAlt
 } from 'react-icons/fa';
 import { SiTailwindcss, SiDjango, SiVuedotjs, SiFigma, SiMongodb, SiTypescript } from 'react-icons/si';
 import { useTranslation } from '../utils/translations';
 
 const Projects = ({ language = 'fr' }) => {
-  const [selectedProject, setSelectedProject] = useState(null);
   const t = useTranslation(language);
 
   const techIcons = {
@@ -89,25 +90,24 @@ const Projects = ({ language = 'fr' }) => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.3
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 50, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.6 }
     }
   };
 
-  // Correction : Ajout d'un gestionnaire pour les images manquantes
   const handleImageError = (e) => {
     e.target.onerror = null;
     e.target.parentNode.innerHTML = `
-      <div class="w-full h-48 bg-gradient-to-r from-blue-700 to-indigo-800 flex items-center justify-center">
+      <div class="w-full h-64 bg-gradient-to-r from-blue-700 to-indigo-800 flex items-center justify-center rounded-xl">
         <div class="text-white text-center p-4">
           <span class="text-4xl mb-2">📷</span>
           <p class="text-sm">${t('imageNotAvailable')}</p>
@@ -117,167 +117,96 @@ const Projects = ({ language = 'fr' }) => {
   };
 
   return (
-    <div className="h-full overflow-y-auto hide-scrollbar p-4 sm:p-6 lg:p-8 text-white pb-20 lg:pb-8 relative">
-      <div className="max-w-6xl mx-auto space-y-8 sm:space-y-12">
+    <div className="h-full overflow-y-auto hide-scrollbar p-4 sm:p-6 lg:p-8 text-white pb-20 lg:pb-8">
+      <div className="max-w-7xl mx-auto space-y-12">
         
         {/* En-tête */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-4"
+          className="text-center space-y-4"
         >
-          <h1 className=" text-center text-2xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             {t('myProjects')}
           </h1>
+          <p className="text-white/70 text-lg max-w-2xl mx-auto">
+           {/* {t('projectsSubtitle')} */}
+          </p>
         </motion.div>
 
-        {/* Grille des projets */}
+        {/* Projets en format détaillé */}
         <motion.div
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
         >
           {projects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-blue-500/50 transition-all duration-300 group cursor-pointer"
-              onClick={() => setSelectedProject(project)}
+              className="bg-gradient-to-r from-blue-900/20 to-indigo-900/20 backdrop-blur-sm rounded-3xl border border-white/10 overflow-hidden hover:border-blue-500/30 transition-all duration-500 group"
             >
-              {/* Image du projet avec gestion des erreurs */}
+              {/* Image */}
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-700"
                   onError={handleImageError}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
 
-              {/* Contenu */}
+              {/* Contenu complet */}
               <div className="p-6 space-y-4">
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-white/70 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-
+                <h2 className="text-xl font-bold text-white">{project.title}</h2>
+                <p className="text-white/80 text-sm leading-relaxed">{project.longDescription}</p>
+                
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-center space-x-1 px-3 py-1 bg-white/10 rounded-full text-xs"
-                    >
-                      <span className="text-sm">{techIcons[tech]}</span>
-                      <span className="text-white/90">{tech}</span>
+                    <div key={index} className="flex items-center space-x-1 px-3 py-1 bg-white/10 rounded-full text-xs">
+                      <span>{techIcons[tech]}</span>
+                      <span>{tech}</span>
                     </div>
                   ))}
+                </div>
+
+                {/* Features */}
+                <div className="space-y-2">
+                  <h4 className="text-sm font-semibold text-white/90">{t('features')}:</h4>
+                  <div className="grid grid-cols-1 gap-1">
+                    {project.features.slice(0, 4).map((feature, index) => (
+                      <div key={index} className="flex items-center space-x-2 text-white/70 text-xs">
+                        <span className="w-1 h-1 bg-blue-500 rounded-full"></span>
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Boutons */}
+                <div className="flex gap-3 pt-2">
+                  {project.githubUrl && (
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" 
+                      className="flex items-center space-x-1 bg-gray-700/60 px-3 py-2 rounded-lg text-xs text-white hover:bg-gray-600 transition-colors">
+                      <FaGithub />
+                      <span>Code</span>
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
+                      className="flex items-center space-x-1 bg-blue-600/60 px-3 py-2 rounded-lg text-xs text-white hover:bg-blue-500 transition-colors">
+                      <FaExternalLinkAlt />
+                      <span>Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Modal de détail du projet - CENTRÉ DANS LE LAYOUT */}
-        <AnimatePresence>
-          {selectedProject && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
-              onClick={() => setSelectedProject(null)}
-            >
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                className="bg-gradient-to-r from-blue-900/95 to-indigo-900/95 backdrop-blur-sm rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto border border-white/20 relative shadow-2xl"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="p-4 sm:p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <h2 className="text-xl sm:text-2xl font-bold text-white">
-                      {selectedProject.title}
-                    </h2>
-                    <button
-                      onClick={() => setSelectedProject(null)}
-                      className="text-white/70 hover:text-white text-2xl w-8 h-8 flex items-center justify-center transition-colors duration-200 hover:bg-white/10 rounded-full"
-                    >
-                      ×
-                    </button>
-                  </div>
-
-                  <div className="space-y-4">
-                    {/* Image plus petite */}
-                    <div className="relative">
-                      <img 
-                        src={selectedProject.image} 
-                        alt={selectedProject.title}
-                        className="w-full rounded-xl max-h-48 object-cover"
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          const placeholder = document.createElement('div');
-                          placeholder.className = "w-full h-48 bg-gradient-to-r from-blue-700 to-indigo-800 rounded-xl flex flex-col items-center justify-center text-white p-4";
-                          placeholder.innerHTML = `
-                            <span class="text-3xl mb-2">📷</span>
-                            <p class="text-sm">${t('imageNotAvailable')}</p>
-                          `;
-                          e.target.replaceWith(placeholder);
-                        }}
-                      />
-                    </div>
-
-                    {/* Description compacte */}
-                    <div>
-                      <h3 className="text-base font-semibold text-white mb-2">{t('description')}</h3>
-                      <p className="text-white/80 text-sm leading-relaxed">
-                        {selectedProject.longDescription}
-                      </p>
-                    </div>
-
-                    {/* Technologies compactes */}
-                    <div>
-                      <h3 className="text-base font-semibold text-white mb-2">{t('technologies')}</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedProject.technologies.map((tech, index) => (
-                          <div 
-                            key={index}
-                            className="flex items-center space-x-1 px-3 py-1 bg-white/10 rounded-full text-xs"
-                          >
-                            <span className="text-sm">{techIcons[tech]}</span>
-                            <span className="text-white/90">{tech}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Fonctionnalités en liste compacte */}
-                    <div>
-                      <h3 className="text-base font-semibold text-white mb-2">{t('features')}</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
-                        {selectedProject.features.map((feature, index) => (
-                          <div key={index} className="flex items-center space-x-2 text-white/80 text-sm">
-                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </div>
   );

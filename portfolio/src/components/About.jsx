@@ -2,6 +2,7 @@ import React from 'react';
 import { FaCode, FaDownload, FaRocket, FaLightbulb, FaHeart } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useTranslation } from '../utils/translations';
+
 const About = ({ language = 'fr' }) => {
   const t = useTranslation(language);
 
@@ -24,10 +25,8 @@ const About = ({ language = 'fr' }) => {
           transition={{ duration: 0.8 }}
           className="text-center space-y-6"
         >
-
-
           {/* Name & Title */}
-          <div className="space-y-4">
+          <div className="space-y-4 m-28">
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -59,31 +58,37 @@ const About = ({ language = 'fr' }) => {
               <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
               <span>{t('innovator')}</span>
             </motion.div>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5 }}
-                className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 rounded-full text-white font-semibold shadow-lg"
-              >
-                <div className="w-3 h-3 bg-white rounded-full mr-3 animate-pulse"></div>
+
+            {/* Badge Développeur Fullstack */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
+              className="flex justify-center mt-8 mb-4"
+            >
+              <div className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-full text-white font-bold text-lg shadow-xl border border-blue-400/30">
+                <div className="w-4 h-4 bg-white rounded-full mr-3 animate-pulse"></div>
                 {t('fullstackDev')}
-              </motion.div>
-              
+              </div>
+            </motion.div>
+
+            {/* Bouton CV à la ligne suivante */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="flex justify-center mt-4"
+            >
               <motion.button
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.7 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={handleDownloadCV}
-                className="inline-flex items-center bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 px-6 py-3 rounded-full text-white font-semibold shadow-lg transition-all duration-300"
+                className="inline-flex items-center bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-white/80 hover:text-white text-sm font-medium transition-all duration-300 border border-white/20 hover:border-white/40"
               >
-                <FaDownload className="mr-2" />
+                <FaDownload className="mr-2 text-xs" />
                 {t('downloadCV')}
               </motion.button>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 
