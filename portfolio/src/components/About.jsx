@@ -67,7 +67,7 @@ const About = ({ language = 'fr' }) => {
               className="flex justify-center mt-8 mb-4"
             >
               <div className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-full text-white font-bold text-lg shadow-xl border border-blue-400/30">
-                <div className="w-4 h-4 bg-white rounded-full mr-3 animate-pulse"></div>
+                <div className="w-4 h-3 bg-white rounded-full mr-3 animate-pulse"></div>
                 {t('fullstackDev')}
               </div>
             </motion.div>
