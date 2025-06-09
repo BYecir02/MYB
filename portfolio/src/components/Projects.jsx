@@ -8,7 +8,9 @@ import {
   FaHtml5, 
   FaCss3Alt,
   FaGithub,
-  FaExternalLinkAlt
+  FaExternalLinkAlt,
+  FaRoute,
+  FaDatabase
 } from 'react-icons/fa';
 import { SiTailwindcss, SiDjango, SiVuedotjs, SiFigma, SiMongodb, SiTypescript } from 'react-icons/si';
 import { useTranslation } from '../utils/translations';
@@ -28,7 +30,10 @@ const Projects = ({ language = 'fr' }) => {
     'Vue.js': <SiVuedotjs className="text-green-400" />,
     'MongoDB': <SiMongodb className="text-green-500" />,
     'TypeScript': <SiTypescript className="text-blue-500" />,
-    'Figma': <SiFigma className="text-purple-400" />
+    'Figma': <SiFigma className="text-purple-400" />,
+    'React Native': <FaReact className="text-cyan-400" />,
+    'Expo Router': <FaRoute className="text-purple-500" />,
+    'AsyncStorage': <FaDatabase className="text-gray-400" />
   };
 
   const projects = [
@@ -52,10 +57,28 @@ const Projects = ({ language = 'fr' }) => {
     },
     {
       id: 2,
+      title: t('benPay'),
+      description: t('benPayDesc'),
+      longDescription: t('benPayLongDesc'),
+      image: "/BenPay.jpg", // Ajoutez l'image dans le dossier public
+      technologies: ["React Native", "TypeScript", "Expo Router", "AsyncStorage"],
+      githubUrl: "https://github.com/BYecir02/benpay", // Remplacez par votre vraie URL
+      liveUrl: null, // Application mobile donc pas de démo web
+      features: [
+        t('dashboardStats'),
+        t('salesSystem3Steps'),
+        t('qrCodeGeneration'),
+        t('transactionManagement'),
+        t('fluidAnimations'),
+        t('stockManagement')
+      ]
+    },    
+    {
+      id: 2,
       title: t('portfolio'),
       description: t('portfolioDesc'),
       longDescription: t('portfolioLongDesc'),
-      image: "/api/placeholder/400/250",
+      image: "/portfolio.png",
       technologies: ["React", "Tailwind CSS", "JavaScript"],
       githubUrl: "https://github.com/username/portfolio",
       liveUrl: "https://portfolio-demo.com",
@@ -188,20 +211,7 @@ const Projects = ({ language = 'fr' }) => {
 
                 {/* Boutons */}
                 <div className="flex gap-3 pt-2">
-                  {project.githubUrl && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" 
-                      className="flex items-center space-x-1 bg-gray-700/60 px-3 py-2 rounded-lg text-xs text-white hover:bg-gray-600 transition-colors">
-                      <FaGithub />
-                      <span>Code</span>
-                    </a>
-                  )}
-                  {project.liveUrl && (
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center space-x-1 bg-blue-600/60 px-3 py-2 rounded-lg text-xs text-white hover:bg-blue-500 transition-colors">
-                      <FaExternalLinkAlt />
-                      <span>Demo</span>
-                    </a>
-                  )}
+
                 </div>
               </div>
             </motion.div>

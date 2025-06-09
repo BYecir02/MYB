@@ -22,8 +22,8 @@ export const translations = {
     fullstackDev: "Développeur Fullstack",
     downloadCV: "Télécharger mon CV",
     aboutTitle: "À propos",
-    aboutText1: "Je suis Mohamed Yecir Badirou, développeur fullstack passionné par la technologie, actuellement en cycle ingénieur à l’ISEN Lille. Curieux, dynamique et rigoureux, j’aime transformer les idées en projets concrets à travers le code. Avec des compétences solides en développement web et mobile, je construis des interfaces intuitives et des systèmes robustes. Je suis également à l’aise avec les outils de gestion de projet et les bases de données. En parallèle de mes études, je mène des projets personnels et académiques afin de progresser constamment et de rester en veille technologique.",
-    aboutText2: "Je suis toujours en quête de nouveaux défis techniques qui me permettront de grandir professionnellement. Je suis actuellement à la recherche d’une alternance pour continuer à apprendre dans un cadre professionnel stimulant. Mon objectif est de contribuer à des projets innovants tout en continuant à apprendre et évoluer dans le développement web et mobile .",
+    aboutText1: "Je suis Mohamed Yecir Badirou, développeur fullstack passionné par la technologie, actuellement en cycle ingénieur à l'ISEN Lille. Curieux, dynamique et rigoureux, j'aime transformer les idées en projets concrets à travers le code. Avec des compétences solides en développement web et mobile, je construis des interfaces intuitives et des systèmes robustes. Je suis également à l'aise avec les outils de gestion de projet et les bases de données. En parallèle de mes études, je mène des projets personnels et académiques afin de progresser constamment et de rester en veille technologique.",
+    aboutText2: "Je suis toujours en quête de nouveaux défis techniques qui me permettront de grandir professionnellement. Je suis actuellement à la recherche d'une alternance pour continuer à apprendre dans un cadre professionnel stimulant. Mon objectif est de contribuer à des projets innovants tout en continuant à apprendre et évoluer dans le développement web et mobile .",
     rhythm: "Rythme :",
     rhythmText: "3 semaines entreprise / 1 semaine école",
     
@@ -96,6 +96,12 @@ export const translations = {
     studiaLink: "StudiaLink - Plateforme collaborative étudiante",
     studiaDesc: "Application full-stack permettant l'organisation de sessions d'étude avec messagerie temps réel, partage de fichiers et interface responsive.",
     studiaLongDesc: "Application full-stack permettant l'organisation de sessions d'étude avec messagerie temps réel, partage de fichiers et interface responsive. Architecture REST API complète avec authentification JWT et gestion de fichiers multimédia.",
+    
+    // Nouveau projet BenPay
+    benPay: "BenPay - Application Mobile de Point de Vente",
+    benPayDesc: "Application mobile de gestion commerciale avec React Native, gestion des ventes, stocks et paiements Mobile Money en temps réel.",
+    benPayLongDesc: "Application mobile de gestion commerciale développée avec React Native, permettant aux commerçants de gérer leurs ventes, stocks et paiements Mobile Money en temps réel. Interface moderne avec système de navigation par onglets, génération de QR codes pour les paiements, et tableau de bord avec statistiques dynamiques.",
+    
     portfolio: "Portfolio Interactif",
     portfolioDesc: "Portfolio personnel avec animations avancées et design responsive",
     portfolioLongDesc: "Portfolio moderne avec des animations fluides, design responsive et interface utilisateur intuitive. Développé avec React et Framer Motion pour des transitions élégantes.",
@@ -106,6 +112,8 @@ export const translations = {
     technologies: "Technologies",
     features: "Fonctionnalités",
     imageNotAvailable: "Image non disponible",
+    
+    // Fonctionnalités existantes
     studySessions: "Organisation de sessions d'étude",
     realTimeMessaging: "Messagerie temps réel",
     fileSharing: "Partage de fichiers multimédia",
@@ -121,6 +129,13 @@ export const translations = {
     explorer: "Explorateur",
     videoPlayer: "Lecteur vidéo",
     gallery: "Galerie",
+    
+    // Nouvelles fonctionnalités BenPay
+    dashboardStats: "Tableau de bord avec statistiques temps réel",
+    salesSystem3Steps: "Système de vente en 3 étapes (panier → paiement → QR)",
+    qrCodeGeneration: "Génération de QR codes Mobile Money (MTN/Moov)",
+    transactionManagement: "Gestion des transactions avec tri et filtrage",
+    stockManagement: "Gestion des produits et stocks",
     
     // Contact Page - CLÉS MANQUANTES
     contact: "Contact",
@@ -252,6 +267,12 @@ export const translations = {
     studiaLink: "StudiaLink - Student Collaboration Platform",
     studiaDesc: "Full-stack application for organizing study sessions with real-time messaging, file sharing and responsive interface.",
     studiaLongDesc: "Full-stack application for organizing study sessions with real-time messaging, file sharing and responsive interface. Complete REST API architecture with JWT authentication and multimedia file management.",
+    
+    // Nouveau projet BenPay
+    benPay: "BenPay - Mobile Point of Sale Application",
+    benPayDesc: "Mobile commerce management application with React Native, real-time sales, inventory and Mobile Money payment management.",
+    benPayLongDesc: "Mobile commerce management application developed with React Native, allowing merchants to manage their sales, inventory and Mobile Money payments in real time. Modern interface with tab navigation system, QR code generation for payments, and dashboard with dynamic statistics.",
+    
     portfolio: "Interactive Portfolio",
     portfolioDesc: "Personal portfolio with advanced animations and responsive design",
     portfolioLongDesc: "Modern portfolio with fluid animations, responsive design and intuitive user interface. Developed with React and Framer Motion for elegant transitions.",
@@ -262,6 +283,8 @@ export const translations = {
     technologies: "Technologies",
     features: "Features",
     imageNotAvailable: "Image not available",
+    
+    // Fonctionnalités existantes
     studySessions: "Study session organization",
     realTimeMessaging: "Real-time messaging",
     fileSharing: "Multimedia file sharing",
@@ -277,6 +300,13 @@ export const translations = {
     explorer: "Explorer",
     videoPlayer: "Video player",
     gallery: "Gallery",
+    
+    // Nouvelles fonctionnalités BenPay
+    dashboardStats: "Dashboard with real-time statistics",
+    salesSystem3Steps: "3-step sales system (cart → payment → QR)",
+    qrCodeGeneration: "Mobile Money QR code generation (MTN/Moov)",
+    transactionManagement: "Transaction management with sorting and filtering",
+    stockManagement: "Product and inventory management",
     
     // Contact Page - CLÉS MANQUANTES
     contact: "Contact",
