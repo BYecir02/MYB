@@ -184,7 +184,7 @@ const Skills = ({ language = 'fr' }) => {
             </p>
             
             <div className="flex flex-wrap justify-center gap-3 mt-6">
-              {["TypeScript", "Docker", "Next.js", "MongoDB", "Agile/Scrum", "Jira"].map((tech, index) => (
+              {["React Native","TypeScript", "Docker", "Next.js", "MongoDB", "Agile/Scrum", "Jira"].map((tech, index) => (
                 <span 
                   key={index}
                   className="px-4 py-2 bg-blue-600/20 rounded-full text-sm text-white/90 border border-blue-500/20"
