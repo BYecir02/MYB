@@ -38,6 +38,26 @@ const Projects = ({ language = 'fr' }) => {
 
   const projects = [
     {
+      id: 5,
+      title: "MatchCV",
+      description: "Outil intelligent pour optimiser et suivre votre recherche d'emploi",
+      longDescription: "MatchCV est une plateforme complète qui utilise l'intelligence artificielle pour analyser vos compétences, matcher des offres d'emploi et générer des lettres de motivation personnalisées.",
+      image: "/matchcv.png", 
+      technologies: [
+        "Node.js", "Express.js", "MongoDB", "JWT", "Groq AI", "React", "Tailwind CSS", "Lucide React", "React Router", "Context API"
+      ],
+      githubUrl: "https://github.com/BYecir02/MatchCV",
+      liveUrl: null,
+      features: [
+        "Gestion de profil complète (compétences, expériences, projets, certifications)",
+        "Analyse intelligente d'offres d'emploi (matching, recommandations, historique)",
+        "Génération de lettres de motivation personnalisées par IA",
+        "Tableau de bord intelligent (statistiques, suivi, conseils)",
+        "Import CV intelligent (extraction automatique des données)",
+        "Sécurité avancée (JWT, bcrypt, validation)"
+      ]
+    },
+    {
       id: 1,
       title: t('studiaLink'),
       description: t('studiaDesc'),
