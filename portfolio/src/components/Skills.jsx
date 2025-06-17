@@ -39,7 +39,7 @@ const Skills = ({ language = 'fr' }) => {
       skills: [
         { name: t('databases'), level: 75, icon: <FaDatabase className="text-gray-400" /> },
         { name: "Python", level: 60, icon: <FaPython className="text-blue-400" /> },
-      { name: "Node.js", level: 55, icon: <FaNodeJs className="text-green-500" /> },
+        { name: "Node.js", level: 55, icon: <FaNodeJs className="text-green-500" /> },
         { name: "Django", level: 50, icon: <SiDjango className="text-green-600" /> },
         { name: "MongoDB", level: 30, icon: <FaDatabase className="text-green-400" /> } // 👈 Ajouté ici
       ]

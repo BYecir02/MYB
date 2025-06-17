@@ -4,6 +4,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      scale: {
+        '80': '0.8',
+      },
       colors: {
         primary: '#2563eb',
         secondary: '#0f172a',
