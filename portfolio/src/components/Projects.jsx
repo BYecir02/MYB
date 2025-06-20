@@ -101,7 +101,7 @@ const Projects = ({ language = 'fr' }) => {
       image: "/portfolio.png",
       technologies: ["React", "Tailwind CSS", "JavaScript"],
       githubUrl: "https://github.com/BYecir02/MYB.git",
-      liveUrl: "https://portfolio-demo.com",
+      liveUrl: "https://myb-seven.vercel.app/",
       features: [
         t('fluidAnimations'),
         t('responsiveDesign'),
