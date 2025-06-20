@@ -46,7 +46,7 @@ const Projects = ({ language = 'fr' }) => {
       technologies: [
         "Node.js", "Express.js", "MongoDB", "JWT", "Groq AI", "React", "Tailwind CSS", "Lucide React", "React Router", "Context API"
       ],
-      githubUrl: "https://github.com/BYecir02/MatchCV",
+      githubUrl: "https://github.com/BYecir02/MatchCV.git",
       liveUrl: null,
       features: [
         "Gestion de profil complète (compétences, expériences, projets, certifications)",
@@ -64,7 +64,7 @@ const Projects = ({ language = 'fr' }) => {
       longDescription: t('studiaLongDesc'),
       image: "/Studialink.png",
       technologies: ["React", "Node.js", "MySQL", "JWT"],
-      githubUrl: "https://github.com/username/studialink",
+      githubUrl: "https://github.com/BYecir02/Studialink.git",
       liveUrl: null,
       features: [
         t('studySessions'),
@@ -100,7 +100,7 @@ const Projects = ({ language = 'fr' }) => {
       longDescription: t('portfolioLongDesc'),
       image: "/portfolio.png",
       technologies: ["React", "Tailwind CSS", "JavaScript"],
-      githubUrl: "https://github.com/username/portfolio",
+      githubUrl: "https://github.com/BYecir02/MYB.git",
       liveUrl: "https://portfolio-demo.com",
       features: [
         t('fluidAnimations'),
@@ -231,7 +231,28 @@ const Projects = ({ language = 'fr' }) => {
 
                 {/* Boutons */}
                 <div className="flex gap-3 pt-2">
-
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-gray-800/80 hover:bg-gray-900 text-white text-xs font-semibold rounded-lg shadow transition-all duration-200 gap-2"
+                    >
+                      <FaGithub className="text-lg" />
+                      GitHub
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-blue-600/80 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg shadow transition-all duration-200 gap-2"
+                    >
+                      <FaExternalLinkAlt className="text-sm" />
+                      Démo
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
